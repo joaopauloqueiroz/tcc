@@ -14,6 +14,7 @@
 					session_start();
 					if (isset($_SESSION['perfil'])) {
 						print_r($_SESSION['perfil']);
+						exit();
 					}
 						if(isset($_GET['id']) && $_GET['id'] == 1){
 							echo "<div class='alert alert-success'>Usuario cadastrado com sucesso</div>";

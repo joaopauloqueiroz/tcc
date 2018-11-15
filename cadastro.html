@@ -1,0 +1,254 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+    <head>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <title>Questionário</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/questions.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+      <!-- Custom styles for this template -->
+      <link href="css/questions.css" rel="stylesheet">
+		<script>
+			const disable = () => {
+				document.getElementById('opt');
+				if(opt.checked){
+					for(let i = 0; i <= 4; i++){
+					document.getElementsByClassName('validate')[i].disabled = true;
+				}
+			}else{
+				for(let i = 0; i <= 4; i++){
+					document.getElementsByClassName('validate')[i].disabled = false;
+				}
+			}
+			}
+		</script>
+    </head>
+
+    <body>
+
+    <form id="Form" action="src/cadastro.php" method="post">
+     <div class="container">
+       <div class="form form-style-blue">
+       <div class="row col-md-12">
+        <div class="col-md-6">
+          <label for="inputName">Nome</label>
+          <input type="text required" id="inputName" name="nome" class="form-control form-control-lg" msg-error="a" required="true" placeholder="Insira seu nome">
+        </div>
+        <div class="col-md-6">
+          <label for="inputLastName">Sobrenome</label>
+          <input type="text" id="inputLastName" name="sobrenome" class="form-control form-control-lg" placeholder="Insira seu sobrenome">
+        </div>
+      </div>
+
+      <div class="row col-md-12">
+        <div class="col-md-8">
+          <label for="inputEmail">E-mail</label>
+          <input type="email" id="inputEmail" name="email" class="form-control form-control-lg" placeholder="Insira seu endereço de e-mail">
+        </div>
+        <div class="col-md-4">
+          <label for="inputLastName">Data de Nascimento</label>
+          <input type="date" id="inputLastName" name="nascimento" class="form-control form-control-lg" placeholder="Insira sua data de aniversário">
+        </div>
+      </div>
+
+      <div class="row col-md-12">
+        <div class="col-md-6">
+          <label for="inputPassword">Senha</label>
+          <input type="password" name="password" id="inputPassword" class="form-control form-control-lg" placeholder="Insira sua senha">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword2">Confirmação de Senha</label>
+          <input type="password" name="password_confirm" id="inputPassword2" class="form-control form-control-lg" placeholder="Confirme sua senha">
+        </div>
+      </div>
+    </div>
+  </div>
+
+     <div class="container">
+
+
+            <div class="form-style-primary">
+              <label for="exampleInputEmail1">Com que frequência você costuma utilizar a internet?</label>
+              <div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="4">
+                <label class="form-check-label" for="exampleRadios1">
+                  Raramente uso
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="4">
+                <label class="form-check-label" for="exampleRadios2">
+                  Uso moderadamente
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="0">
+                <label class="form-check-label" for="exampleRadios3">
+                   Uso com frequência
+                </label>
+              </div>
+            </div>
+          </div><br/>
+
+          <div class="form-style-success">
+              <label for="exampleInputEmail1">Você tem baixa visão?</label>
+              <div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="0">
+                <label class="form-check-label" for="exampleRadios1">
+                  Não, minha visão está em perfeitas condições.
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios2" value="1">
+                <label class="form-check-label" for="exampleRadios2">
+                  Não, porém tenho sensibilidade a claridade.
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="2">
+                <label class="form-check-label" for="exampleRadios3">
+                  Sim, preciso utilizar óculos ou não consigo enxergar com clareza.
+                </label>
+              </div>
+            </div>
+          </div><br/>
+
+          <div class="form-style-warning">
+            <label for="exampleInputEmail1">Você possui alguma dessas deficiências visuais listadas abaixo?</label>
+            <div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="0" id="opt" name="nao" onclick="disable()">
+                <label class="form-check-label" for="defaultCheck1">
+                  Não possuo nenhuma defiiciência visual
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input validate" type="checkbox" value="0" id="defaultCheck1" name="miopia">
+                <label class="form-check-label" for="defaultCheck1">
+                  Miopia
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input validate" type="checkbox" value="3" id="defaultCheck2" name="daltonismo">
+                <label class="form-check-label" for="defaultCheck2">
+                  Daltonismo
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input validate" type="checkbox" value="2" id="defaultCheck1" name="astigmatismo">
+                <label class="form-check-label" for="defaultCheck1">
+                  Astigmatismo
+                </label>
+              </div>
+               <div class="form-check">
+                <input class="form-check-input validate" type="checkbox" value="2" id="defaultCheck1" name="hipermetropia">
+                <label class="form-check-label" for="defaultCheck1">
+                  Hipermetropia
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input validate" type="checkbox" value="2" id="defaultCheck1" name="outros">
+                <label class="form-check-label" for="defaultCheck1">
+                  Outros
+                </label>
+              </div>
+            </div>
+          </div><br/>
+
+          <div class="form-style-danger">
+             <label style="margin-bottom: 10px;" for="exampleInputEmail1">Analise as imagens abaixo e selecione a opção que melhor representa os números que você enxergou</label><br/>
+
+             <div class="row col-md-12 col-sm-12 col-lg-12 col-xs-12">
+              <div class="col-md-3 col-sm-4 col-lg-2 col-xs-6">
+                <img src="33.png" style="width: 150px;" class="mx-auto d-block">
+              </div>
+              <div class="col-md-3 col-sm-4 col-lg-2 col-xs-6">
+                <img src="55.png" style="width: 150px;" class="mx-auto d-block"> 
+              </div>
+              <div class="col-md-3 col-sm-4 col-lg-2 col-xs-6">
+                 <img src="77.png" style="width: 150px;" class="mx-auto d-block"> 
+              </div>
+              <div class="col-md-3 col-sm-4 col-lg-2 col-xs-6">
+                <img src="422.png" style="width: 150px;" class="mx-auto d-block">
+              </div>
+              <div class="col-md-3 col-sm-4 col-lg-2 col-xs-6">
+                <img src="744.png" style="width: 150px;" class="mx-auto d-block">
+              </div>
+              <div class="col-md-3 col-sm-4 col-lg-2 col-xs-6">
+                 <img src="522.png" style="width: 170px;" class="mx-auto d-block">
+              </div>
+            </div>
+    
+             <div style="margin-top: 10px">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="3">
+                  <label class="form-check-label" for="exampleRadios1">
+                     3 - 8 - 1 - 42 - 74 - 52
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="3">
+                  <label class="form-check-label" for="exampleRadios2">
+                    3 - 5 - 7 - 48 - 74 - 58
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios3" value="3">
+                  <label class="form-check-label" for="exampleRadios3">
+                    3 - 5 - 1 - 42 - 71 - 52
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios3" value="0">
+                  <label class="form-check-label" for="exampleRadios3">
+                    3 - 5 - 7 - 42 - 74 - 52
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios3" value="3">
+                  <label class="form-check-label" for="exampleRadios3">
+                    8 - 5 - 1 - 42 - 71 - 58
+                  </label>
+                </div>
+            </div>
+          </div>
+          <div style="padding-top: 20px;">
+              <button class="btn btn-lg btn-success" type="submit">Registrar</button>
+          </div>
+
+    </form>
+</div>
+
+
+
+
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js
+"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.min.js
+"></script>
+
+
+
+    </body>
+
+  </html>
